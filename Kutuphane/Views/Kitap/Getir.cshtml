@@ -1,0 +1,32 @@
+﻿@model Kutuphane.Models.Entity.tblKitap
+@{
+    ViewBag.Title = "Getir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+@using (Html.BeginForm("Guncelle", "Kitap", FormMethod.Post))
+{
+    <h1>Kitap Güncelleme Alanı</h1>
+    @Html.HiddenFor(x => x.Id)
+    <label>Kitap Adı</label>
+    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+    <br />
+    <label>Kitap Kategorisi</label>
+    @Html.DropDownListFor(x => x.tblKategori.Id, (List<SelectListItem>)
+    ViewBag.drop, new { @class = "form-control" })
+    <br />
+    <label>Kitap Yazarı</label>
+    @Html.DropDownListFor(x => x.tblYazar.Id, (List<SelectListItem>)
+    ViewBag.drop1, new { @class = "form-control" })
+    <br />
+    <label>Kitap Basım Yılı</label>
+    @Html.TextBoxFor(x => x.Basımyıl, new { @class = "form-control" })
+    <br />
+    <label>Kitap Sayfa</label>
+    @Html.TextBoxFor(x => x.Sayfa, new { @class = "form-control" })
+    <br />
+    <label>Hakkında</label>
+    @Html.TextBoxFor(x => x.Hakkinda, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+}
+

@@ -1,0 +1,52 @@
+﻿@model Kutuphane.Models.Entity.tblUyeler
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h1>Yeni Kullanıcı Ekle</h1>
+<form method="post">
+    <label>Kullanıcı Adı</label>
+    <br />
+    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Ad, "Bu Alan Boş Bırakılamaz", new { @style = "color:green" })
+    <br />
+    <label>Kullanıcı Soyadı</label>
+    <br />
+    @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Soyad, "Bu Alan Boş Bırakılamaz", new { @style = "color:green" })
+    <br />
+    <label>Kullanıcı Mail Addressi</label>
+    <br />
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Mail, "Bu Alan Boş Bırakılamaz", new { @style = "color:green" })
+    <br />
+    <label>Kullanıcı Adı</label>
+    <br />
+    @Html.TextBoxFor(x => x.KullanıcıAdı, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.KullanıcıAdı, "Bu Alan Boş Bırakılamaz", new { @style = "color:green" })
+    <br />
+    <label>Kullanıcı Şifresi</label>
+    <br />
+    @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Sifre, "Bu Alan Boş Bırakılamaz", new { @style = "color:green" })
+    <br />
+    <label>Kullanıcı Fotoğrafı</label>
+    <br />
+    @Html.TextBoxFor(x => x.Fotoğraf, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Fotoğraf, "Bu Alan Boş Bırakılamaz", new { @style = "color:green" })
+    <br />
+    <label>Kullanıcı Telefon Numarası</label>
+    <br />
+    @Html.TextBoxFor(x => x.Telefon, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Telefon, "Bu Alan Boş Bırakılamaz", new { @style = "color:green" })
+    <br />
+    <label>Kullanıcı Okulu</label>
+    <br />
+    @Html.TextBoxFor(x => x.Okul, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Okul, "Bu Alan Boş Bırakılamaz", new { @style = "color:green" })
+    <br />
+
+    <button class="btn btn-success">Kullanıcı Ekle</button>
+</form>
+

@@ -1,0 +1,21 @@
+﻿@model Kutuphane.Models.Entity.tblDuyurular
+@{
+    ViewBag.Title = "Detay";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Duyuru", FormMethod.Post))
+{
+    <h1>Personel Bilgileri Güncelleme Alanı</h1>
+    @Html.HiddenFor(x => x.Id)
+    <label>Duyuru Kategori</label>
+    @Html.TextBoxFor(x => x.Kategori, new { @class = "form-control" })
+    <br />
+    <label>Duyuru İçeriği</label>
+    @Html.TextAreaFor(x => x.İçerik, new { @class = "form-control" })
+    <br />
+    <label>Duyuru Tarihi</label>
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Güncelle</button>
+}

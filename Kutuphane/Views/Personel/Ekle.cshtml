@@ -1,0 +1,20 @@
+﻿@model Kutuphane.Models.Entity.tblPersonel
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<h1>Yeni Personel Ekle</h1>
+<form method="post">
+    <label>Personel Adı</label>
+    <br />
+    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Ad, "Bu Alan Boş Bırakılamaz", new { @style = "color:green" })
+    <br />
+    <label>Personel Soyadı</label>
+    <br />
+    @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Soyad, "Bu Alan Boş Bırakılamaz", new { @style = "color:green" })
+    <br />
+    <button class="btn btn-success">İşe Al</button>
+</form>
+

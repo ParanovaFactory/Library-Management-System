@@ -1,0 +1,36 @@
+﻿@using Kutuphane.Models.Entity
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<tblHareket>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h1>Ödünç Kitap Listesi</h1>
+<table class="table table-striped">
+    <tr style="background-color:rgb(252, 178, 22)">
+        <th>İşlem Id</th>
+        <th>Kitap Adı</th>
+        <th>Üye</th>
+        <th>Personel</th>
+        <th>Alış Tarihi</th>
+        <th>İade Tarihi</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.Id</td>
+            <td>@x.tblKitap.Ad</td>
+            <td>@x.tblUyeler.Ad @x.tblUyeler.Soyad</td>
+            <td>@x.tblPersonel.Ad @x.tblPersonel.Soyad</td>
+            <td>@Convert.ToDateTime(x.AlısTarihi).ToString("dd/MM/yyyy")</td>
+            <td>@Convert.ToDateTime(x.IadeTarihi).ToString("dd/MM/yyyy")</td>
+            <td>
+                <a href="/Odunc/Iade/@x.Id" class="btn btn-warning">Kitabı İade Et</a>
+            </td>
+        </tr>
+    }
+</table>
+
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }))

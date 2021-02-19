@@ -1,0 +1,38 @@
+﻿@using Kutuphane.Models.Entity
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<tblUyeler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<h1>Kullanıcılar</h1>
+
+<table class="table table-striped">
+    <tr style="background-color:rgb(252, 178, 22)">
+        <th>Id</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Okul</th>
+        <th>Durum</th>
+        <th>İşlemler</th>
+    </tr>
+    @foreach (var u in Model)
+    {
+        <tr>
+            <td>@u.Id</td>
+            <td>@u.Ad</td>
+            <td>@u.Soyad</td>
+            <td>@u.Okul</td>
+            <td>@u.Durum</td>
+            <td>
+                <a href="/Uye/Sil/@u.Id" class="btn btn-danger">Sil</a>
+                <a href="/Uye/Getir/@u.Id" class="btn btn-success">Güncelle</a>
+                <a href="/Uye/UyeKitapGecmisi/@u.Id" class="btn btn-success">Kitap Geçmişi</a>
+            </td>
+        </tr>
+    }
+</table>
+
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }))
+<a href="/Uye/Ekle" class="btn btn-info">Yeni Üye Ekle</a>

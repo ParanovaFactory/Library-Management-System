@@ -1,0 +1,48 @@
+﻿@using Kutuphane.Models.Entity
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<tblKitap>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<h1>Kitaplar</h1>
+<table class="table table-striped">
+    <tr style="background-color:rgb(252, 178, 22)">
+        <th>Id</th>
+        <th>Kitap Adı</th>
+        <th>Kitap Kategorisi</th>
+        <th>Kitap Yazarı</th>
+        <th>Kitap Basım Yılı</th>
+        <th>Kitap Yayın Evi</th>
+        <th>Kitap Sayfa</th>
+        <th>Kitap Hakkında</th>
+        <th>Kitap Stoktamı</th>
+        <th>İşlemler</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.Id</td>
+            <td>@x.Ad</td>
+            <td>@x.tblKategori.Ad</td>
+            <td>@x.tblYazar.Ad</td>
+            <td>@x.Basımyıl</td>
+            <td>@x.YayınEvi</td>
+            <td>@x.Sayfa</td>
+            <td>@x.Hakkinda</td>
+            <td>@x.Durum</td>
+            <td>
+                <a href="/Kitap/Sil/@x.Id" class="btn btn-danger">Stoktan Kaladır</a>
+                <br />
+                <a href="/Kitap/Gir/@x.Id" class="btn btn-warning">Stoğa Ekle</a>
+                <br />
+                <a href="/Kitap/Getir/@x.Id" class="btn btn-success">Güncelle</a>
+            </td>
+        </tr>
+    }
+</table>
+
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }))
+<a href="/Kitap/Ekle" class="btn btn-primary">Yeni Kitap Ekle</a>
+

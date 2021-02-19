@@ -1,0 +1,23 @@
+﻿@model Kutuphane.Models.Entity.tblDuyurular
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h1>Yeni Duyuru Ekle</h1>
+<form method="post">
+    <label>Duyuru Kategori</label>
+    <br />
+    @Html.TextBoxFor(x => x.Kategori, new { @class = "form-control" })
+    <br />
+    <label>Duyuru İçerik</label>
+    <br />
+    @Html.TextBoxFor(x => x.İçerik, new { @class = "form-control" })
+    <br />
+    <label>Duyuru Tarihi</label>
+    <br />
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Duyuru Ekle</button>
+</form>
+

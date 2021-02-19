@@ -1,0 +1,50 @@
+﻿@model Kutuphane.Models.Entity.tblKitap
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h1>Kitap Ekleme</h1>
+<form method="post">
+    <label>Kitap Adı</label>
+    <br />
+    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Ad, "Bu Alan Boş Bırakılamaz", new { @style = "color:green" })
+    <br />
+    <label>Kitap Kategorisi</label>
+    <br />
+    @Html.DropDownListFor(x => x.tblKategori.Id, (List<SelectListItem>)
+    ViewBag.drop, new { @class = "form-control" })
+    <br />
+    <label>Kitap Yazarı</label>
+    <br />
+    @Html.DropDownListFor(x => x.tblYazar.Id, (List<SelectListItem>)
+   ViewBag.drop1, new { @class = "form-control" })
+    <br />
+    <label>Kitap Basım Yılı</label>
+    <br />
+    @Html.TextBoxFor(x => x.Basımyıl, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Basımyıl, "Bu Alan Boş Bırakılamaz", new { @style = "color:green" })
+    <br />
+    <label>Kitap Sayfa</label>
+    <br />
+    @Html.TextBoxFor(x => x.Sayfa, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Sayfa, "Bu Alan Boş Bırakılamaz", new { @style = "color:green" })
+    <br />
+    <label>Kitap Yayın Evi</label>
+    <br />
+    @Html.TextBoxFor(x => x.YayınEvi, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.YayınEvi, "Bu Alan Boş Bırakılamaz", new { @style = "color:green" })
+    <br />
+    <label>Kitap Fotoğraf Link'i</label>
+    <br />
+    @Html.TextBoxFor(x => x.Fotoğraf, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Fotoğraf, "Bu Alan Boş Bırakılamaz", new { @style = "color:green" })
+    <br />
+    <label>Kitap Hakkında</label>
+    <br />
+    @Html.TextBoxFor(x => x.Hakkinda, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Hakkinda, "Bu Alan Boş Bırakılamaz", new { @style = "color:green" })
+    <br />
+    <button class="btn btn-info">Ekle</button>
+</form>

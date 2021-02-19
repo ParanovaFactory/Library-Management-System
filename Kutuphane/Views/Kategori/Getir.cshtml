@@ -1,0 +1,16 @@
+﻿@model Kutuphane.Models.Entity.tblKategori
+@{
+    ViewBag.Title = "Getir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Kategori", FormMethod.Post))
+{
+    <h1>Ketegori Güncelleme Alanı</h1>
+    @Html.HiddenFor(x => x.Id)
+    <label>Kategori Adı</label>
+    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Ekle</button>
+}
+

@@ -1,0 +1,18 @@
+﻿@model Kutuphane.Models.Entity.tblPersonel
+@{
+    ViewBag.Title = "Getir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+@using (Html.BeginForm("Guncelle", "Personel", FormMethod.Post))
+{
+    <h1>Personel Bilgileri Güncelleme Alanı</h1>
+    @Html.HiddenFor(x => x.Id)
+    <label>Personel Adı</label>
+    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+    <br />
+    <label>Personel Soyadı</label>
+    @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Güncelle</button>
+}
+

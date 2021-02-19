@@ -1,0 +1,67 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<title>Kütüphane Yönetlim Sistemi</title>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
+        <button class=w3-bar-item w3-button w3-large
+                onclick="w3_close()">
+            Kapat &times;
+        </button>
+        <a href="/Istatistik/Index" class="w3-bar-item w3-button">Ana Sayfa</a>
+        <a href="/Kitap/Index" class="w3-bar-item w3-button">Kitaplar</a>
+        <a href="/Kategori/Index" class="w3-bar-item w3-button">Kategoriler</a>
+        <a href="/Yazar/Index" class="w3-bar-item w3-button">Yazarlar</a>
+        <a href="/Uye/Index" class="w3-bar-item w3-button">Kullanıcılar</a>
+        <a href="/Personel/Index" class="w3-bar-item w3-button">Personeller</a>
+        <a href="/Odunc/Ekle" class="w3-bar-item w3-button">Ödünç Kitap Ver</a>
+        <a href="/Odunc/Index" class="w3-bar-item w3-button">Ödünç Kitap Al</a>
+        <a href="/Vitrin/Index" class="w3-bar-item w3-button">Vitrin</a>
+        <a href="/Odunc/Index1" class="w3-bar-item w3-button">İşlemler</a>
+        <a href="/Istatistik/Hava" class="w3-bar-item w3-button">Hava Raporu</a>
+        <a href="/Istatistik/HavaKart" class="w3-bar-item w3-button">Hava Kartları</a>
+        <a href="/Ceza/Index" class="w3-bar-item w3-button">Ceza</a>
+        <a href="/Duyuru/Index" class="w3-bar-item w3-button">Duyurular</a>
+        <a href="/Istatistik/Galeri" class="w3-bar-item w3-button">Galeri</a>
+        <a href="/Istatistik/LinqKart" class="w3-bar-item w3-button">Linq Kartlar</a>
+        <a href="/Grafik/Index" class="w3-bar-item w3-button">Grafikler</a>
+        <a href="#" class="w3-bar-item w3-button">Yardım</a>
+        <a href="/Panelim/LogOut" class="w3-bar-item w3-button">Çıkış</a>
+    </div>
+
+    <div id="main">
+
+        <div class="w3-teal">
+            <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
+            <div class="w3-container">
+                <h1>Kütüphane Yönetim Sistemi</h1>
+            </div>
+        </div>
+        <div class="w3-container">
+            @RenderBody()
+        </div>
+
+    </div>
+
+    <script>
+        function w3_open() {
+            document.getElementById("main").style.marginLeft = "25%";
+            document.getElementById("mySidebar").style.width = "25%";
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("openNav").style.display = 'none';
+        }
+        function w3_close() {
+            document.getElementById("main").style.marginLeft = "0%";
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("openNav").style.display = "inline-block";
+        }
+    </script>
+
+</body>
+</html>

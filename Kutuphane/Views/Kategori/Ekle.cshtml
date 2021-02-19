@@ -1,0 +1,14 @@
+﻿@model Kutuphane.Models.Entity.tblKategori
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<h1>Yeni Katagori Ekleme Sayfası</h1>
+<form method="post">
+    <label>Kategori Adı</label>
+    <br />
+    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+
+    <br />
+    <button class="btn btn-success">Ekle</button>
+</form>

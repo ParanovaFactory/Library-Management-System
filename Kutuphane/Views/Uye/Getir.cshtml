@@ -1,0 +1,37 @@
+﻿@model Kutuphane.Models.Entity.tblUyeler
+@{
+    ViewBag.Title = "Getir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Uye", FormMethod.Post))
+{
+    <h1>Kullanıcı Bilgileri Güncelleme Alanı</h1>
+    @Html.HiddenFor(x => x.Id)
+    <label>Kullanıcı Adı</label>
+    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+    <br />
+    <label>Kullanıcı Soyadı</label>
+    @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control" })
+    <br />
+    <label>Kullanıcı Mail Adressi</label>
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    <br />
+    <label>Kullanıcı Adı(Rumuz)</label>
+    @Html.TextBoxFor(x => x.KullanıcıAdı, new { @class = "form-control" })
+    <br />
+    <label>Kullanıcı Şifresi</label>
+    @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control" })
+    <br />
+    <label>Kullanıcı Fotoğrafı</label>
+    @Html.TextBoxFor(x => x.Fotoğraf, new { @class = "form-control" })
+    <br />
+    <label>Kullanıcı Telefon Nomarası</label>
+    @Html.TextBoxFor(x => x.Telefon, new { @class = "form-control" })
+    <br />
+    <label>Kullanıcı Okulu</label>
+    @Html.TextBoxFor(x => x.Okul, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Güncelle</button>
+}
+

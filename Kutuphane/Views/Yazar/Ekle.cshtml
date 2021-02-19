@@ -1,0 +1,21 @@
+﻿@model Kutuphane.Models.Entity.tblYazar
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<h1>Yeni Katagori Ekleme Sayfası</h1>
+<form method="post">
+    <label>Yazar Adı</label>
+    <br />
+    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Ad)
+    <br />
+    <label>Yazar Soyadı</label>
+    @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Soyad)
+    <br />
+    <label>Yazar Detay Bilgileri</label>
+  @Html.TextAreaFor(x => x.Detay, new { @class = "form-control"})
+    <br />
+    <button class="btn btn-success">Ekle</button>
+</form>

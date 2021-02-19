@@ -1,0 +1,104 @@
+﻿@model Kutuphane.Models.Entity.tblUyeler
+
+@using (Html.BeginForm("Index2", "Panelim", FormMethod.Post))
+
+{
+
+    <form class="form-horizontal">
+
+        <div class="form-group row">
+
+            <label for="inputName" class="col-sm-2 col-form-label">Ad</label>
+
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+
+            <label for="inputName" class="col-sm-2 col-form-label">Soyad</label>
+
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control" })
+
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+
+            <label for="inputName" class="col-sm-2 col-form-label">Kullanıcı Adı</label>
+
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.KullanıcıAdı, new { @class = "form-control" })
+
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+
+            <label for="inputName" class="col-sm-2 col-form-label">Şifre</label>
+
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control" })
+
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+
+            <label for="inputName" class="col-sm-2 col-form-label">Fotoğraf</label>
+
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.Fotoğraf, new { @class = "form-control" })
+
+            </div>
+
+        </div>
+        <div class="form-group row">
+
+            <label for="inputName" class="col-sm-2 col-form-label">Telefon</label>
+
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.Telefon, new { @class = "form-control" })
+
+            </div>
+
+        </div>
+
+
+        <div class="form-group row">
+
+            <label for="inputName" class="col-sm-2 col-form-label">Okul</label>
+
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.Okul, new { @class = "form-control" })
+
+            </div>
+
+        </div>
+        <div class="form-group row">
+
+            <div class="offset-sm-2 col-sm-10">
+
+                <button type="submit" class="btn btn-danger">Güncelle</button>
+
+            </div>
+
+        </div>
+
+    </form>
+
+}
