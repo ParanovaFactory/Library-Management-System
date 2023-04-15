@@ -1,1 +1,1 @@
-# MVC5 İle Geliştirdiğim Kütüphane Yönetim Sistemi
+# Library management application requested for my university graduation project
